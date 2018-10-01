@@ -1,11 +1,11 @@
 package com.adamwozniewski.kotlin_app
 
-import android.graphics.drawable.Drawable
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentStatePagerAdapter
 import com.adamwozniewski.kotlin_app.models.FoodIngridient
+import com.adamwozniewski.kotlin_app.recycler.RecyclerViewFragment
 import com.github.florent37.materialviewpager.header.HeaderDesign
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
     private fun initPager() {
         materialpageridentificator.viewPager.adapter = object : FragmentStatePagerAdapter(supportFragmentManager) {
             override fun getCount(): Int = ingidientArray.size
-            override fun getItem(p0: Int): Fragment = Fragment()
+            override fun getItem(position: Int): Fragment = RecyclerViewFragment.newInstance(ingidientArray[position])
             override fun getPageTitle(position: Int): CharSequence? = ingidientArray[position].name
         }// to jet te ID
 

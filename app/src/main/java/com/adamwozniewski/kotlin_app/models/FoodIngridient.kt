@@ -4,6 +4,7 @@ import android.graphics.drawable.Drawable
 import android.support.v4.content.res.ResourcesCompat
 import com.adamwozniewski.kotlin_app.App
 import com.adamwozniewski.kotlin_app.R
+import java.io.Serializable
 
 
 /**
@@ -18,8 +19,8 @@ data class FoodIngridient(
         private val dailyMale: String,
         private val dailyFem: String,
         private val unit: IntakeDoseUnit,
-         val imgName: String
-) {
+        val imgName: String
+): Serializable {
     val intake
         get() = """${"\u2642"} $dailyMale ${unit.getLocalName()}
             | ${"\u2640"} $dailyFem ${unit.getLocalName()}""".trimMargin()
@@ -47,6 +48,9 @@ enum class IntakeDoseUnit {
     },
     IU() {
         override fun getLocalName() = App.appContext.getString(R.string.unifiedunit)
+    },
+    UNKNOWN() {
+        override fun getLocalName() = App.appContext.getString(R.string.undefined)
     };
 
     abstract fun getLocalName(): String?

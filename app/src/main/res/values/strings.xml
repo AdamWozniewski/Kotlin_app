@@ -5,4 +5,5 @@
     <string name="milirogram">miligram</string>
     <string name="mikrogram">mikrogram</string>
     <string name="unifiedunit">internacional unit</string>
+    <string name="undefined">Nieznane</string>
 </resources>
