@@ -24,7 +24,6 @@ data class FoodIngridient(
     val intake
         get() = """${"\u2642"} $dailyMale ${unit.getLocalName()}
             | ${"\u2640"} $dailyFem ${unit.getLocalName()}""".trimMargin()
-
     val drawable: Drawable? // moze niue byc zasobu obrazka
         get() {
             val apc = App.appContext
@@ -40,8 +39,8 @@ enum class IntakeDoseUnit {
     GRAM() {
         override fun getLocalName() = App.appContext.getString(R.string.gram)
     },
-    MILIGRAM() {
-        override fun getLocalName() = App.appContext.getString(R.string.milirogram)
+    MGRAM() {
+        override fun getLocalName() = App.appContext.getString(R.string.miligram)
     },
     UGRAM() {
         override fun getLocalName() = App.appContext.getString(R.string.mikrogram)
@@ -50,7 +49,7 @@ enum class IntakeDoseUnit {
         override fun getLocalName() = App.appContext.getString(R.string.unifiedunit)
     },
     UNKNOWN() {
-        override fun getLocalName() = App.appContext.getString(R.string.undefined)
+        override fun getLocalName() = App.appContext.getString(R.string.unifiedunit)
     };
 
     abstract fun getLocalName(): String?

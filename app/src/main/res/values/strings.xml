@@ -2,7 +2,7 @@
     <string name="app_name">Kotlin_app</string>
 
     <string name="gram">gram</string>
-    <string name="milirogram">miligram</string>
+    <string name="miligram">miligram</string>
     <string name="mikrogram">mikrogram</string>
     <string name="unifiedunit">internacional unit</string>
     <string name="undefined">Nieznane</string>
